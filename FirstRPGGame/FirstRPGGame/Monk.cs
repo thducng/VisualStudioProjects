@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace FirstRPGGame
 {
-    public class Human : BaseRace
+    class Monk
     {
-
     }
 }
