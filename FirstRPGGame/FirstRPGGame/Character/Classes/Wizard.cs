@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace FirstRPGGame
 {
-    public class BaseWizard : BaseClass
+    public class Wizard : Class
     {
-        public BaseWizard()
+        public Wizard()
         {
             ClassName = "Wizard";
             ClassDescription = "Loves to cast and learn powerful spells, born with great intelligence\n" +
@@ -16,8 +16,8 @@ namespace FirstRPGGame
 
             Strength = 5;
             Dexterity = 5;
-            Intelligence = 10;
-            Vitality = 5;
+            Intelligence = 14;
+            Vitality = 6;
         }
     }
 }

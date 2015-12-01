@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace FirstRPGGame
 {
-    public class BaseWarrior : BaseClass
+    public class Warrior : Class
     {
-        public BaseWarrior()
+        public Warrior()
         {
             ClassName = "Warrior";
             ClassDescription =
                 "Warrior is the born strong and powerful, \n" +
                 "they are melee and can deal alot of damage og take alot of damage";
 
-            Strength = 10;
+            Strength = 11;
             Dexterity = 6;
-            Intelligence = 4;
-            Vitality = 9;
+            Intelligence = 5;
+            Vitality = 8;
         }
     }
 }

@@ -9,11 +9,11 @@ namespace FirstRPGGame.DataHandling
     {
         private readonly ServerLog _logger = new ServerLog();
 
-        object fileLock = new object();
+        private readonly object _fileLock = new object();
 
         public List<T> Deserialize()
         {
-            lock (fileLock) {
+            lock (_fileLock) {
                 List<T> result;
                 XmlSerializer deserializer = new XmlSerializer(typeof(List<T>));
                 _logger.Log($"File accesed is name: {typeof(T)}");
@@ -44,7 +44,10 @@ namespace FirstRPGGame.DataHandling
         public void Serialize(List<T> serializeObject)
         {
             Type serializeType = typeof(List<T>);
-            _logger.Log($"File created with name: {serializeType}");
+            lock (_fileLock)
+            {
+                _logger.Log($"File created with name: {serializeType}");
+            }
             List<T> storedList = new List<T>();
             if (File.Exists(typeof(T).ToString()) && new FileInfo(typeof(T).ToString()).Length != 0)
             {
@@ -70,10 +73,10 @@ namespace FirstRPGGame.DataHandling
             List<T> returnList = originList;
             List<T> tempList = new List<T>();
             tempList.AddRange(newList);
-            for (int index = 0; index < tempList.Count; index++)
+            foreach (var element in tempList)
             {
-                var element = tempList[index];
-                var currentIndex = originList.FindIndex(i => i.Equals(element));
+                var element1 = element;
+                var currentIndex = originList.FindIndex(i => i.Equals(element1));
                 if (currentIndex != -1)
                 {
                     returnList[currentIndex] = element;

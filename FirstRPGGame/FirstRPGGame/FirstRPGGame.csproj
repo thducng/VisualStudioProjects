@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Character\Classes\Archer.cs" />
+    <Compile Include="Character\Classes\Warrior.cs" />
+    <Compile Include="Character\Classes\Wizard.cs" />
     <Compile Include="DataHandling\DataHandler.cs" />
     <Compile Include="DataHandling\TimeLog.cs" />
     <Compile Include="GameViewModel.cs" />
@@ -79,7 +82,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Character\Character.cs" />
-    <Compile Include="Character\Classes\BaseClass.cs" />
+    <Compile Include="Character\Classes\Class.cs" />
     <Compile Include="Character\Races\BaseRace.cs" />
     <Compile Include="Items\Equipment.cs" />
     <Compile Include="Character\Races\Human.cs" />
@@ -95,6 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IViewModel.cs" />
+    <Compile Include="Character\Classes\Monk.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

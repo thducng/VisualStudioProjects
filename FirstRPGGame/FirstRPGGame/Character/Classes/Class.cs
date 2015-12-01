@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FirstRPGGame
 {
-    public class BaseClass
+    public class Class
     {
         public string ClassName { get; set; }
         public string ClassDescription { get; set; }
@@ -15,5 +15,7 @@ namespace FirstRPGGame
         public int Dexterity { get; set; }
         public int Intelligence { get; set; }
         public int Vitality { get; set; }
+
+        public List<Skill> Skills { get; set; }
     }
 }
