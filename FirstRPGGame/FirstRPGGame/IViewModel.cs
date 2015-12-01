@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace FirstRPGGame
 {
-    public class Human : BaseRace
+    public interface IViewModel
     {
-        
-
     }
 }

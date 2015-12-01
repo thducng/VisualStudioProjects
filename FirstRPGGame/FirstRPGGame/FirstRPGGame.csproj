@@ -55,7 +55,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Compile Include="DataHandling\DataHandler.cs" />
+    <Compile Include="DataHandling\TimeLog.cs" />
+    <Compile Include="GameViewModel.cs" />
+    <Compile Include="DataHandling\IDeserialize.cs" />
+    <Compile Include="DataHandling\ISerialize.cs" />
+    <Compile Include="Items\Consumables\ConsumableHealthPotion.cs" />
+    <Compile Include="Items\Consumables\ConsumableItem.cs" />
+    <Compile Include="Items\Consumables\ConsumableManaPotion.cs" />
+    <Compile Include="Items\Wearables\WearableChest.cs" />
+    <Compile Include="Items\Wearables\WearableFeet.cs" />
+    <Compile Include="Items\Wearables\WearableHands.cs" />
+    <Compile Include="Items\Wearables\WearableHead.cs" />
+    <Compile Include="Items\Wearables\WearableItem.cs" />
+    <Compile Include="Character\Skills\Skill.cs" />
+    <Compile Include="DataHandling\XmlTranslator.cs" />
+    <Page Include="CharacterSelectionView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -63,17 +78,23 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Character.cs" />
-    <Compile Include="BaseClass.cs" />
-    <Compile Include="BaseRace.cs" />
-    <Compile Include="Human.cs" />
-    <Compile Include="Item.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="Character\Character.cs" />
+    <Compile Include="Character\Classes\BaseClass.cs" />
+    <Compile Include="Character\Races\BaseRace.cs" />
+    <Compile Include="Items\Equipment.cs" />
+    <Compile Include="Character\Races\Human.cs" />
+    <Compile Include="Items\Item.cs" />
+    <Compile Include="Items\Wearables\WearableLegs.cs" />
+    <Compile Include="Items\Wearables\WearableNecklace.cs" />
+    <Compile Include="Items\Wearables\WearableRing.cs" />
+    <Compile Include="Items\Wearables\WearableShoulders.cs" />
+    <Compile Include="CharacterSelectionView.xaml.cs">
+      <DependentUpon>CharacterSelectionView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -99,6 +120,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Characters\" />
+    <Folder Include="Resources\Images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

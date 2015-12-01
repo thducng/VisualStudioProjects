@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
+using FirstRPGGame.Items;
+using FirstRPGGame.Items.Wearables;
 
 namespace FirstRPGGame
 {
@@ -14,31 +17,35 @@ namespace FirstRPGGame
             Race = @race;
 
             Inventory = new List<Item>();
+            Equipment = new Equipment();
+            Skills = new List<Skill>();
         }
 
         #region Character Stats Properties
 
         public string CharacterName { get; }
+        public BitmapImage Image { get; set; }
+        public int CharacterLevel { get; set; }
         public BaseClass Class { get; private set; }
         public BaseRace Race { get; }
 
         public int HealthPoints { get; set; }
         public int ManaPoints { get; set; }
-        public double Experience { get; set; }
+        public int Experience { get; set; }
 
         public int Strength { get; set; }
         public int Dexterity { get; set; }
         public int Intelligence { get; set; }
         public int Vitality { get; set; }
 
-        public double PhysicalDamage { get; set; }
-        public double MagicalDamage { get; set; }
+        public int PhysicalDamage { get; set; }
+        public int MagicalDamage { get; set; }
 
-        public double PhysicalDefense { get; set; }
-        public double MagicalDefense { get; set; }
+        public int PhysicalDefense { get; set; }
+        public int MagicalDefense { get; set; }
         
-        public double Toughness { get; set; }
-        public double Damage { get; set; }
+        public int Toughness { get; set; }
+        public int Damage { get; set; }
 
         /* 
         -----------------------------------------------------------------------------------------
@@ -127,32 +134,32 @@ namespace FirstRPGGame
 
             #region Private Methods
 
-        private double DeterminePhysicalDamage()
+        private int DeterminePhysicalDamage()
         {
             return 0.0;
         }
 
-        private double DetermineMagicalDamage()
+        private int DetermineMagicalDamage()
         {
             return 0.0;
         }
 
-        private double DeterminePhysicalDefense()
+        private int DeterminePhysicalDefense()
         {
             return 0.0;
         }
 
-        private double DetermineMagicalDefense()
+        private int DetermineMagicalDefense()
         {
             return 0.0;
         }
 
-        private double DetermineToughness()
+        private int DetermineToughness()
         {
             return 0.0;
         }
 
-        private double DetermineDamage()
+        private int DetermineDamage()
         {
             return 0.0;
         }
@@ -161,11 +168,58 @@ namespace FirstRPGGame
 
         #endregion
 
-        #region Character Inventory Properties
+        #region Character Item Properties
 
         public List<Item> Inventory { get ; private set; }
 
+        public Equipment Equipment { get; private set; }
+
         #endregion
+
+        #region Character Item Methods
+
+        public void AddItemToInventory(Item item)
+        {
+            Inventory.Add(item);
+        }
+
+        public void AddItemToInventory(List<Item> listOfItems)
+        {
+            Inventory.AddRange(listOfItems);
+        }
+
+        public void RemoveItemFromInventory(Item item)
+        {
+            Inventory.Remove(item);
+        }
+
+        public void AddItemToEquipment(WearableItem item)
+        {
+            Inventory = Equipment.Wear(item, Inventory);
+        }
+
+        public void RemoveItemFromEquipment(WearableItem item)
+        {
+            Inventory = Equipment.TakeOff(item, Inventory);
+        }
+
+        #endregion
+
+        #region Character Skill Properties
+
+        public List<Skill> Skills { get; private set; }
+
+        #endregion
+
+        #region Character Skill Methods
+
+        public void AddSkillToCharacter(Skill skill)
+        {
+            Skills.Add(skill);
+        }
+
+        #endregion
+
 
     }
 }
