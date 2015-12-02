@@ -1,26 +1,36 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Windows.Media.Imaging;
+using FirstRPGGame.CharacterFiles.Skills;
+using System.IO;
 
-namespace FirstRPGGame.Character.Classes
+namespace FirstRPGGame.CharacterFiles.Classes
 {
     public class Archer : Class
     {
         public Archer()
         {
-            ClassName = "Archer";
-            ClassDescription =
-                "The archer is fast and stealthy, \n" +
-                "they use the bow and arrow to deal physical damage at long range";
+            Image = new BitmapImage(new Uri(Path.GetFullPath("../../Resources/Images/Archer.jpg")));
 
             Strength = 6;
             Dexterity = 12;
             Intelligence = 5;
             Vitality = 7;
 
+            ClassName = "Archer";
+            ClassDescription = "Ranged Physical DPS\n\n" +
+                               "Start Stats:\n\n" +
+                               "Strength: " + Strength + "\n" +
+                               "Dexterity: " + Dexterity + "\n" +
+                               "Intelligence: " + Intelligence + "\n" +
+                               "Vitality: " + Vitality + "\n";
+
             MakeSkill();
         }
 
         private void MakeSkill()
         {
+            Skills = new List<Skill>();
             Skills.AddRange
                 (new List<Skill>()
                 {

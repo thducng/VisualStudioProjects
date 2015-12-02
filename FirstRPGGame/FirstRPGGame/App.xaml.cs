@@ -17,7 +17,7 @@ namespace FirstRPGGame
         {
             GameViewModel viewModel = new GameViewModel();
 
-            viewModel.StartGame();
+            viewModel.StartCharacterSelection();
         }
     }
 }

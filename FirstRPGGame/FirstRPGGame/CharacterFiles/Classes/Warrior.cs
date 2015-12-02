@@ -1,26 +1,36 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Windows.Media.Imaging;
+using FirstRPGGame.CharacterFiles.Skills;
+using System.IO;
 
-namespace FirstRPGGame.Character.Classes
+namespace FirstRPGGame.CharacterFiles.Classes
 {
     public class Warrior : Class
     {
         public Warrior()
         {
-            ClassName = "Warrior";
-            ClassDescription =
-                "Warrior is the born strong and powerful, \n" +
-                "they are melee and can deal alot of damage og take alot of damage";
+            Image = new BitmapImage(new Uri(Path.GetFullPath("../../Resources/Images/Warrior.jpg")));
 
             Strength = 11;
             Dexterity = 6;
             Intelligence = 5;
             Vitality = 8;
 
+            ClassName = "Warrior";
+            ClassDescription = "Melee Physical DPS\n\n" +
+                               "Start Stats:\n\n" +
+                               "Strength: " + Strength + "\n" +
+                               "Dexterity: " + Dexterity + "\n" +
+                               "Intelligence: " + Intelligence + "\n" +
+                               "Vitality: " + Vitality + "\n";
+
             MakeSkill();
         }
 
         private void MakeSkill()
         {
+            Skills = new List<Skill>();
             Skills.AddRange
                 (new List<Skill>()
                 {

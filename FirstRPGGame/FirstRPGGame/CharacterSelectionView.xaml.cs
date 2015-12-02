@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FirstRPGGame.CharacterFiles;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,9 @@ namespace FirstRPGGame
     /// </summary>
     public partial class CharacterSelectionView : Window
     {
-        private IViewModel ViewModel { get ; set; }
+        private GameViewModel ViewModel { get ; set; }
 
-        public CharacterSelectionView(IViewModel vm)
+        public CharacterSelectionView(GameViewModel vm)
         {
             InitializeComponent();
             ViewModel = vm;
@@ -31,12 +32,14 @@ namespace FirstRPGGame
 
         private void Character1_OnClick(object sender, MouseButtonEventArgs e)
         {
-
+            ImageSelectedCharacter.Source = ViewModel.character1.Image;
+            TextBlockCharacterName.Text = ViewModel.character1.CharacterName;
         }
 
         private void Character2_OnClick(object sender, MouseButtonEventArgs e)
         {
-
+            ImageSelectedCharacter.Source = ViewModel.character2.Image;
+            TextBlockCharacterName.Text = ViewModel.character1.CharacterName;
         }
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
@@ -46,7 +49,9 @@ namespace FirstRPGGame
 
         private void ButtonCreate_Click(object sender, RoutedEventArgs e)
         {
-
+            Visibility = Visibility.Hidden;
+            ViewModel.CreateCharacter();
+            Visibility = Visibility.Visible;
         }
 
         private void UpdateView()
@@ -59,7 +64,7 @@ namespace FirstRPGGame
             ImageCharacter1.Source = character.Image;
             TextBlockNameCharacter1.Text = character.CharacterName;
             TextBlockLevelCharacter1.Text = character.CharacterLevel.ToString();
-            TextBlockClassCharacter1.Text = character.Class.ClassName;
+            TextBlockClassCharacter1.Text = character.CharacterClass.ClassName;
             TextBlockDamageCharacter1.Text = character.Damage.ToString();
             TextBlockToughnessCharacter1.Text = character.Toughness.ToString();
         }
@@ -69,7 +74,7 @@ namespace FirstRPGGame
             ImageCharacter2.Source = character.Image;
             TextBlockNameCharacter2.Text = character.CharacterName;
             TextBlockLevelCharacter2.Text = character.CharacterLevel.ToString();
-            TextBlockClassCharacter2.Text = character.Class.ClassName;
+            TextBlockClassCharacter2.Text = character.CharacterClass.ClassName;
             TextBlockDamageCharacter2.Text = character.Damage.ToString();
             TextBlockToughnessCharacter2.Text = character.Toughness.ToString();
         }

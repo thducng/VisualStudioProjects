@@ -1,26 +1,36 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Windows.Media.Imaging;
+using FirstRPGGame.CharacterFiles.Skills;
+using System.IO;
 
-namespace FirstRPGGame.Character.Classes
+namespace FirstRPGGame.CharacterFiles.Classes
 {
     public class Monk : Class
     {
         public Monk()
         {
-            ClassName = "Monk";
-            ClassDescription =
-                "The Monk has patients and rarely gets angry, \n" +
-                "but when he does his combat skills are strong";
+            Image = new BitmapImage(new Uri(Path.GetFullPath("../../Resources/Images/Monk.jpg")));
 
             Strength = 8;
             Dexterity = 7;
             Intelligence = 5;
             Vitality = 10;
 
+            ClassName = "Monk";
+            ClassDescription = "Melee Physical DPS/Tank\n\n" +
+                               "Start Stats:\n\n" +
+                               "Strength: " + Strength + "\n" +
+                               "Dexterity: " + Dexterity + "\n" +
+                               "Intelligence: " + Intelligence + "\n" +
+                               "Vitality: " + Vitality + "\n";
+
             MakeSkill();
         }
 
         private void MakeSkill()
         {
+            Skills = new List<Skill>();
             Skills.AddRange
                 (new List<Skill>()
                 {

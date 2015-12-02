@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FirstRPGGame.Character.Classes;
+﻿using FirstRPGGame.CharacterFiles.Classes;
 
-namespace FirstRPGGame
+namespace FirstRPGGame.CharacterFiles.Skills
 {
     public class Skill
     {

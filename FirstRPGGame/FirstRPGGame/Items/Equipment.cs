@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FirstRPGGame.Items;
+﻿using System.Collections.Generic;
 using FirstRPGGame.Items.Wearables;
 
-namespace FirstRPGGame
+namespace FirstRPGGame.Items
 {
     public class Equipment
     {

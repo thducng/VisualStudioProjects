@@ -1,25 +1,36 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Windows.Media.Imaging;
+using FirstRPGGame.CharacterFiles.Skills;
+using System.IO;
 
-namespace FirstRPGGame.Character.Classes
+namespace FirstRPGGame.CharacterFiles.Classes
 {
     public class Wizard : Class
     {
         public Wizard()
         {
-            ClassName = "Wizard";
-            ClassDescription = "Loves to cast and learn powerful spells, born with great intelligence\n" +
-                               "Wise and think before they fight";
+            Image = new BitmapImage(new Uri(Path.GetFullPath("../../Resources/Images/Wizard.jpg")));
 
             Strength = 5;
             Dexterity = 5;
             Intelligence = 14;
             Vitality = 6;
 
+            ClassName = "Wizard";
+            ClassDescription = "Ranged Magical DPS\n\n" +
+                               "Start Stats:\n\n" +
+                               "Strength: " + Strength + "\n" +
+                               "Dexterity: " + Dexterity + "\n" +
+                               "Intelligence: " + Intelligence + "\n" +
+                               "Vitality: " + Vitality + "\n";
+
             MakeSkill();
         }
 
         private void MakeSkill()
         {
+            Skills = new List<Skill>();
             Skills.AddRange
                 (new List<Skill>()
                 {

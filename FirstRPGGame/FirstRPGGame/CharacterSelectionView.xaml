@@ -6,8 +6,11 @@
         xmlns:local="clr-namespace:FirstRPGGame"
         mc:Ignorable="d"
         Title="Character Selection" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Width="1200" Height="800">
-    <Grid Background="#FF191717">
-        <Grid Margin="660,50,50,425" PreviewMouseLeftButtonDown="Character1_OnClick" Visibility="Hidden">
+    <Window.Background>
+        <ImageBrush ImageSource="Resources/Images/Bagground.jpg"/>
+    </Window.Background>
+    <Grid>
+        <Grid Margin="660,50,50,425" PreviewMouseLeftButtonDown="Character1_OnClick" Visibility="hidden" Background="#7F000000">
             <Image x:Name="ImageCharacter1" HorizontalAlignment="Left" Height="276" Margin="10,10,0,0" VerticalAlignment="Top" Width="219"/>
             <TextBlock x:Name="TextBlockNameCharacter1" HorizontalAlignment="Left" Margin="255,10,0,0" TextWrapping="Wrap" Text="Character Name" VerticalAlignment="Top" Height="35" Width="196" FontSize="18.667" Foreground="White"/>
             <TextBlock x:Name="TextBlockLevelCharacter1" HorizontalAlignment="Left" Margin="255,86,0,0" TextWrapping="Wrap" Text="Character Level" VerticalAlignment="Top" Height="35" Width="196" FontSize="18.667" Foreground="White"/>
@@ -16,7 +19,7 @@
             <TextBlock x:Name="TextBlockToughnessCharacter1" HorizontalAlignment="Left" Margin="255,237,0,0" TextWrapping="Wrap" Text="Character Toughness" VerticalAlignment="Top" Height="35" Width="196" FontSize="18.667" Foreground="White"/>
         </Grid>
 
-        <Grid Margin="660,425,50,50" PreviewMouseLeftButtonDown="Character2_OnClick" Visibility="Hidden">
+        <Grid Margin="660,425,50,50" PreviewMouseLeftButtonDown="Character2_OnClick" Visibility="Hidden" Background="#7F000000">
             <Image x:Name="ImageCharacter2" HorizontalAlignment="Left" Height="276" Margin="10,10,0,0" VerticalAlignment="Top" Width="219"/>
             <TextBlock x:Name="TextBlockNameCharacter2" HorizontalAlignment="Left" Margin="255,10,0,0" TextWrapping="Wrap" Text="Character Name" VerticalAlignment="Top" Height="35" Width="196" FontSize="18.667" Foreground="White"/>
             <TextBlock x:Name="TextBlockLevelCharacter2" HorizontalAlignment="Left" Margin="255,88,0,0" TextWrapping="Wrap" Text="Character Level" VerticalAlignment="Top" Height="35" Width="196" FontSize="18.667" Foreground="White"/>
@@ -26,12 +29,12 @@
         </Grid>
 
         <Image x:Name="ImageSelectedCharacter" Margin="180,150,694,271"/>
-        <Button x:Name="ButtonLogin" Content="Select Character" Margin="242,606,770,107" FontSize="16" Click="ButtonLogin_Click"/>
+        <Button x:Name="ButtonLogin" Content="Select Character" Margin="242,606,770,107" FontSize="16" Click="ButtonLogin_Click" Background="#FFDDDDDD"/>
         <Button x:Name="ButtonCreate" Content="Create Character" HorizontalAlignment="Left" Margin="264,679,0,0" VerticalAlignment="Top" Width="134" Height="42" Click="ButtonCreate_Click"/>
-        <TextBlock x:Name="TextBlockCharacter2" HorizontalAlignment="Left" Margin="734,537,0,0" TextWrapping="Wrap" Text="Create Character" VerticalAlignment="Top" Height="91" Width="384" Foreground="White" FontSize="48"/>
-        <TextBlock x:Name="TextBlockCharacter1" HorizontalAlignment="Left" Margin="734,130,0,0" TextWrapping="Wrap" Text="Create Character" VerticalAlignment="Top" Height="91" Width="384" Foreground="White" FontSize="48"/>
-        <TextBlock x:Name="TextBlockTitle" HorizontalAlignment="Left" Margin="180,50,0,0" TextWrapping="Wrap" Text="Random RPG Game!" VerticalAlignment="Top" Height="67" Width="360" FontSize="32" Foreground="White"/>
-        <TextBlock x:Name="TextBlockCharacterName" HorizontalAlignment="Left" Margin="180,537,0,0" TextWrapping="Wrap" Text="Character Name" VerticalAlignment="Top" Height="64" Width="320" TextAlignment="Center" FontSize="26.667" Foreground="White"/>
+        <TextBlock x:Name="TextBlockCharacter2" HorizontalAlignment="Left" Margin="734,537,0,0" TextWrapping="Wrap" Text="Create Character" VerticalAlignment="Top" Height="79" Width="384" Foreground="White" FontSize="48" TextAlignment="Center" Background="#4C000000"/>
+        <TextBlock x:Name="TextBlockCharacter1" HorizontalAlignment="Left" Margin="734,130,0,0" TextWrapping="Wrap" Text="Create Character" VerticalAlignment="Top" Height="73" Width="384" Foreground="White" FontSize="48" Background="#4C000000" TextAlignment="Center"/>
+        <TextBlock x:Name="TextBlockTitle" HorizontalAlignment="Left" Margin="158,50,0,0" TextWrapping="Wrap" Text="Random RPG Game!" VerticalAlignment="Top" Height="52" Width="360" FontSize="32" Foreground="White" TextAlignment="Center" Background="#4C000000"/>
+        <TextBlock x:Name="TextBlockCharacterName" HorizontalAlignment="Left" Margin="180,537,0,0" TextWrapping="Wrap" Text="Character Name" VerticalAlignment="Top" Height="49" Width="320" TextAlignment="Center" FontSize="26.667" Foreground="White" Background="#4C000000"/>
 
     </Grid>
 </Window>

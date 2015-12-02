@@ -1,18 +1,22 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Media.Imaging;
-using FirstRPGGame.Character.Classes;
+using FirstRPGGame.CharacterFiles.Classes;
+using FirstRPGGame.CharacterFiles.Races;
+using FirstRPGGame.CharacterFiles.Skills;
 using FirstRPGGame.Items;
 using FirstRPGGame.Items.Wearables;
 
-namespace FirstRPGGame.Character
+namespace FirstRPGGame.CharacterFiles
 {
     public class Character
     {
-        public Character(string @characterName, BaseRace @race)
+        public Character(string @characterName)
         {
             CharacterName = @characterName;
-            Race = @race;
 
+            CharacterClass = new Class();
+            CharacterRace = new Race();
             Inventory = new List<Item>();
             Equipment = new Equipment();
             Skills = new List<Skill>();
@@ -23,8 +27,8 @@ namespace FirstRPGGame.Character
         public string CharacterName { get; }
         public BitmapImage Image { get; set; }
         public int CharacterLevel { get; set; }
-        public Class Class { get; private set; }
-        public BaseRace Race { get; }
+        public Class CharacterClass { get; private set; }
+        public Race CharacterRace { get; private set; }
 
         public int HealthPoints { get; set; }
         public int ManaPoints { get; set; }
@@ -107,12 +111,19 @@ namespace FirstRPGGame.Character
 
         public void AssignClass(Class @class)
         {
-            Class = @class;
+            CharacterClass = @class;
 
-            Strength += Class.Strength;
-            Dexterity += Class.Dexterity;
-            Intelligence += Class.Intelligence;
-            Vitality += Class.Vitality;
+            Strength += CharacterClass.Strength;
+            Dexterity += CharacterClass.Dexterity;
+            Intelligence += CharacterClass.Intelligence;
+            Vitality += CharacterClass.Vitality;
+
+            Image = CharacterClass.Image;
+        }
+
+        public void AssignRace(Race @race)
+        {
+            
         }
 
         public void UpdateStats()
