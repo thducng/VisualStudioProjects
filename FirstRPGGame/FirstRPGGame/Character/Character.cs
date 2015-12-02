@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows.Media.Imaging;
+using FirstRPGGame.Character.Classes;
 using FirstRPGGame.Items;
 using FirstRPGGame.Items.Wearables;
 
-namespace FirstRPGGame
+namespace FirstRPGGame.Character
 {
     public class Character
     {
@@ -26,7 +23,7 @@ namespace FirstRPGGame
         public string CharacterName { get; }
         public BitmapImage Image { get; set; }
         public int CharacterLevel { get; set; }
-        public BaseClass Class { get; private set; }
+        public Class Class { get; private set; }
         public BaseRace Race { get; }
 
         public int HealthPoints { get; set; }
@@ -108,7 +105,7 @@ namespace FirstRPGGame
 
             #region Public Methods
 
-        public void AssignClass(BaseClass @class)
+        public void AssignClass(Class @class)
         {
             Class = @class;
 
@@ -136,32 +133,32 @@ namespace FirstRPGGame
 
         private int DeterminePhysicalDamage()
         {
-            return 0.0;
+            return 0;
         }
 
         private int DetermineMagicalDamage()
         {
-            return 0.0;
+            return 0;
         }
 
         private int DeterminePhysicalDefense()
         {
-            return 0.0;
+            return 0;
         }
 
         private int DetermineMagicalDefense()
         {
-            return 0.0;
+            return 0;
         }
 
         private int DetermineToughness()
         {
-            return 0.0;
+            return 0;
         }
 
         private int DetermineDamage()
         {
-            return 0.0;
+            return 0;
         }
 
         #endregion

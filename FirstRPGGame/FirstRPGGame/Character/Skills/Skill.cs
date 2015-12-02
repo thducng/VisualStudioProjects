@@ -3,27 +3,52 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FirstRPGGame.Character.Classes;
 
 namespace FirstRPGGame
 {
     public class Skill
     {
-        public Skill(Type @class, string @skillName, string @skillDescription, int @baseDamageValue)
+        public Skill(Class @class, int @skillLevelReq, int @skillLevel, string @skillName, string @skillDescription,
+            int @baseDamageValue, int @baseDamageScale, bool @passive = false)
         {
             Class = @class;
+            SkillLevelReq = @skillLevelReq;
+            SkillLevel = @skillLevel;
             SkillName = @skillName;
             SkillDescription = @skillDescription;
             BaseDamageValue = @baseDamageValue;
+            BaseDamageScale = @baseDamageScale;
+            Passive = @passive;
         }
 
-        public Type Class { get; set; }
+        public Class Class { get; set; }
+
+        public int SkillLevelReq { get; set; }
+
+        public int SkillLevel { get; set; }
 
         public string SkillName { get; set; }
 
         public string SkillDescription { get; set; }
 
+        public bool Passive { get; set; }
+
         public int BaseDamageValue { get; set; }
 
-        // Mere damage logik
+        public int BaseDamageScale { get; set; }
+
+        public void SkillLevelUp(int levelup)
+        {
+            SkillLevel += levelup;
+
+            BaseDamageValue = (SkillLevel*100) + 200;
+        }
+
+        public int UseSkill(int mainStat)
+        {
+            return BaseDamageValue + (BaseDamageScale*mainStat)/100;
+        }
+
     }
 }
