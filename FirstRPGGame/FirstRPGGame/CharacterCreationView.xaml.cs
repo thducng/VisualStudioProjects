@@ -1,4 +1,5 @@
-﻿using FirstRPGGame.CharacterFiles.Classes;
+﻿using FirstRPGGame.CharacterFiles;
+using FirstRPGGame.CharacterFiles.Classes;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -63,6 +64,36 @@ namespace FirstRPGGame
             Wizard wizard = new Wizard();
             Image.Source = wizard.Image;
             TextBlockDescription.Text = wizard.ClassDescription;
+        }
+
+        private void ButtonCreate_Click(object sender, RoutedEventArgs e)
+        {
+            if (TextBoxName.Text.Length > 2)
+            {
+                Character newCharacter = new Character(TextBoxName.Text);
+
+                if (Archer.IsChecked == true)
+                {
+                    newCharacter.AssignClass(new Archer());
+                }
+                else if (Monk.IsChecked == true)
+                {
+                    newCharacter.AssignClass(new Monk());
+                }
+                else if (Warrior.IsChecked == true)
+                {
+                    newCharacter.AssignClass(new Warrior());
+                }
+                else if (Wizard.IsChecked == true)
+                {
+                    newCharacter.AssignClass(new Wizard());
+                }
+                else
+                {
+                    
+                }
+            }
+            
         }
     }
 }

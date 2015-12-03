@@ -69,6 +69,7 @@
     <Compile Include="Items\Consumables\ConsumableHealthPotion.cs" />
     <Compile Include="Items\Consumables\ConsumableItem.cs" />
     <Compile Include="Items\Consumables\ConsumableManaPotion.cs" />
+    <Compile Include="Items\Wearables\WearableLeftHandWeapon.cs" />
     <Compile Include="Items\Wearables\WearableChest.cs" />
     <Compile Include="Items\Wearables\WearableFeet.cs" />
     <Compile Include="Items\Wearables\WearableHands.cs" />
@@ -90,12 +91,11 @@
     </Compile>
     <Compile Include="CharacterFiles\Character.cs" />
     <Compile Include="CharacterFiles\Classes\Class.cs" />
-    <Compile Include="CharacterFiles\Races\Race.cs" />
     <Compile Include="Items\Equipment.cs" />
-    <Compile Include="CharacterFiles\Races\Human.cs" />
     <Compile Include="Items\Item.cs" />
     <Compile Include="Items\Wearables\WearableLegs.cs" />
     <Compile Include="Items\Wearables\WearableNecklace.cs" />
+    <Compile Include="Items\Wearables\WearableRightHandWeapon.cs" />
     <Compile Include="Items\Wearables\WearableRing.cs" />
     <Compile Include="Items\Wearables\WearableShoulders.cs" />
     <Compile Include="CharacterSelectionView.xaml.cs">

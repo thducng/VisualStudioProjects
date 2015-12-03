@@ -16,6 +16,8 @@ namespace FirstRPGGame.Items
             Feet = null;
             Ring = null;
             Necklace = null;
+            RightHandWeapon = null;
+            LeftHandWeapon = null;
         }
 
         public WearableHead Head { get; private set; }
@@ -33,6 +35,10 @@ namespace FirstRPGGame.Items
         public WearableRing Ring { get; private set; }
 
         public WearableNecklace Necklace { get; private set; }
+
+        public WearableItem RightHandWeapon { get; private set; }
+
+        public WearableItem LeftHandWeapon { get; private set; }
 
 
         public List<Item> Wear(WearableItem item, List<Item> inventory)
@@ -72,6 +78,19 @@ namespace FirstRPGGame.Items
                 case "WearableNecklace":
                     switchedItem = Necklace;
                     Necklace = item as WearableNecklace;
+                    break;
+                case "WearableRightHandWeapon":                
+                    switchedItem = RightHandWeapon;
+                    RightHandWeapon = item as WearableRightHandWeapon;
+                    if (RightHandWeapon.WeaponTwoHanded)
+                    {
+                        inventory.Add(LeftHandWeapon);
+                        LeftHandWeapon = null;
+                    }
+                    break;
+                case "WearableLeftHandWeapon":
+                    switchedItem = LeftHandWeapon;
+                    LeftHandWeapon = item as WearableLeftHandWeapon;
                     break;
             }
 
@@ -117,6 +136,14 @@ namespace FirstRPGGame.Items
                 case "WearableNecklace":
                     switchedItem = Necklace;
                     Necklace = null;
+                    break;
+                case "WearableRightHandWeapon":
+                    switchedItem = RightHandWeapon;
+                    RightHandWeapon = null;
+                    break;
+                case "WearableLeftHandWeapon":
+                    switchedItem = LeftHandWeapon;
+                    LeftHandWeapon = null;
                     break;
             }
 

@@ -13,7 +13,7 @@
             <ImageBrush ImageSource="Resources/Images/Bagground.jpg"/>
         </Grid.Background>
         <Image x:Name="Image" Margin="50,50,322,35"/>
-        <Button x:Name="ButtonCreate" Content="Create" Margin="478,223,126,214"/>
+        <Button x:Name="ButtonCreate" Content="Create" Margin="478,223,126,214" Click="ButtonCreate_Click"/>
         <TextBox x:Name="TextBoxName" HorizontalAlignment="Left" Height="23" Margin="450,67,0,0" TextWrapping="Wrap" Text="Character Name" VerticalAlignment="Top" Width="150" GotFocus="TextBoxName_OnGotFocus"/>
         <TextBlock x:Name="TextBlockDescription" HorizontalAlignment="Left" Margin="430,278,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="158" Width="200" Background="#66000000" Foreground="White"/>
         <RadioButton x:Name="Archer" Content="Archer" HorizontalAlignment="Left" Margin="450,110,0,0" VerticalAlignment="Top" Height="20" Width="133" Checked="Archer_OnChecked" Panel.ZIndex="1" BorderBrush="White" Foreground="White"/>
