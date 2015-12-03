@@ -10,16 +10,18 @@ namespace FirstRPGGame
 {
     public class GameViewModel : IViewModel
     {
-        private DataHandler dataHandler { get; }
-        public Character character1 { get; set; }
-        public Character character2 { get; set; }
+        private DataHandler DataHandler { get; }
+        public Character Character1 { get; set; }
+        public Character Character2 { get; set; }
+        public Character NewCharacter { get; set; }
         public bool CharacterFull { get; set; }
 
         public GameViewModel()
         {
-            dataHandler = new DataHandler();
-            character1 = new Character("character1");
-            character2 = new Character("character2");
+            DataHandler = new DataHandler();
+            Character1 = new Character();
+            Character2 = new Character();
+            NewCharacter = null;
             CharacterFull = false;
 
             LoadCharacters();
@@ -41,22 +43,31 @@ namespace FirstRPGGame
         {
             CharacterCreationView charCreateView = new CharacterCreationView(this);
 
+            if (CharacterFull)
+            {
+                return;
+            }
             charCreateView.ShowDialog();
+            if (NewCharacter != null)
+            {
+                DataHandler.CreateCharacter(NewCharacter);
+                LoadCharacters();
+            }
         }
 
         private void LoadCharacters()
         {
-            List<Character> characters = dataHandler.GetCharacters();
+            List<Character> characters = DataHandler.GetCharacters();
 
             if (characters.Count == 2)
             {
                 CharacterFull = true;
-                character1 = characters[0];
-                character2 = characters[1];
+                Character1 = characters[0];
+                Character2 = characters[1];
             }
             else if (characters.Count == 1)
             {
-                character1 = characters[0];
+                Character1 = characters[0];
             }
         }   
     }

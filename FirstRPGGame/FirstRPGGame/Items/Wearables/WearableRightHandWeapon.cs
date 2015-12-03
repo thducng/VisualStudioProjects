@@ -8,12 +8,11 @@ namespace FirstRPGGame.Items.Wearables
 {
     public class WearableRightHandWeapon : WearableItem
     {
-        public WearableRightHandWeapon(string @name, int @rarity, string @weaponType, bool @weaponTwoHanded = false)
+        public void MakeItem(string @name, int @rarity, string @weaponType)
         {
             Name = @name;
             Rarity = @rarity;
             WeaponType = @weaponType;
-            WeaponTwoHanded = @weaponTwoHanded;
         }
     }
 }

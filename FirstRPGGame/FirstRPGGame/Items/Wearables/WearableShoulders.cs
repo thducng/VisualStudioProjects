@@ -2,7 +2,7 @@
 {
     public class WearableShoulders : WearableItem
     {
-        public WearableShoulders(string @name, int @rarity, string @material)
+        public void MakeItem(string @name, int @rarity, string @material)
         {
             Name = @name;
             Rarity = @rarity;

@@ -41,28 +41,32 @@ namespace FirstRPGGame
         private void Archer_OnChecked(object sender, RoutedEventArgs e)
         {
             Archer archer = new Archer();
-            Image.Source = archer.Image;
+            archer.MakeClass();
+            Image.Source = new BitmapImage(new Uri(archer.ImagePath));
             TextBlockDescription.Text = archer.ClassDescription;
         }
 
         private void Monk_OnChecked(object sender, RoutedEventArgs e)
         {
             Monk monk = new Monk();
-            Image.Source = monk.Image;
+            monk.MakeClass();
+            Image.Source = new BitmapImage(new Uri(monk.ImagePath));
             TextBlockDescription.Text = monk.ClassDescription;
         }
 
         private void Warrior_OnChecked(object sender, RoutedEventArgs e)
         {
             Warrior warrior = new Warrior();
-            Image.Source = warrior.Image;
+            warrior.MakeClass();
+            Image.Source = new BitmapImage(new Uri(warrior.ImagePath));
             TextBlockDescription.Text = warrior.ClassDescription;
         }
 
         private void Wizard_OnChecked(object sender, RoutedEventArgs e)
         {
             Wizard wizard = new Wizard();
-            Image.Source = wizard.Image;
+            wizard.MakeClass();
+            Image.Source = new BitmapImage(new Uri(wizard.ImagePath));
             TextBlockDescription.Text = wizard.ClassDescription;
         }
 
@@ -70,30 +74,52 @@ namespace FirstRPGGame
         {
             if (TextBoxName.Text.Length > 2)
             {
-                Character newCharacter = new Character(TextBoxName.Text);
+                Character newCharacter = new Character();
+                newCharacter.MakeCharacter();
+                newCharacter.CharacterName = TextBoxName.Text;
 
                 if (Archer.IsChecked == true)
                 {
-                    newCharacter.AssignClass(new Archer());
+                    Archer newClass = new Archer();
+                    newClass.MakeClass();
+                    newCharacter.AssignClass(newClass);
+                    ViewModel.NewCharacter = newCharacter;
+                    Close();
                 }
                 else if (Monk.IsChecked == true)
                 {
-                    newCharacter.AssignClass(new Monk());
+                    Monk newClass = new Monk();
+                    newClass.MakeClass();
+                    newCharacter.AssignClass(newClass);
+                    ViewModel.NewCharacter = newCharacter;
+                    Close();
                 }
                 else if (Warrior.IsChecked == true)
                 {
-                    newCharacter.AssignClass(new Warrior());
+                    Warrior newClass = new Warrior();
+                    newClass.MakeClass();
+                    newCharacter.AssignClass(newClass);
+                    
+                    ViewModel.NewCharacter = newCharacter;
+                    Close();
                 }
                 else if (Wizard.IsChecked == true)
                 {
-                    newCharacter.AssignClass(new Wizard());
+                    Wizard newClass = new Wizard();
+                    newClass.MakeClass();
+                    newCharacter.AssignClass(newClass);
+                    ViewModel.NewCharacter = newCharacter;
+                    Close();
                 }
                 else
                 {
-                    
+                    return;
                 }
             }
-            
+            else
+            {
+                return;
+            }
         }
     }
 }

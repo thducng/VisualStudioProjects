@@ -5,27 +5,24 @@ using FirstRPGGame.CharacterFiles.Classes;
 using FirstRPGGame.CharacterFiles.Skills;
 using FirstRPGGame.Items;
 using FirstRPGGame.Items.Wearables;
+using System;
 
 namespace FirstRPGGame.CharacterFiles
 {
+    [Serializable]
     public class Character
     {
-        public Character(string @characterName)
+        public Character()
         {
-            CharacterName = @characterName;
-
-            CharacterClass = new Class();
-            Inventory = new List<Item>();
-            Equipment = new Equipment();
-            Skills = new List<Skill>();
+            
         }
 
         #region Character Stats Properties
 
-        public string CharacterName { get; }
-        public BitmapImage Image { get; set; }
+        public string CharacterName { get; set; }
+        public string ImagePath { get; set; }
         public int CharacterLevel { get; set; }
-        public Class CharacterClass { get; private set; }
+        public Class CharacterClass { get; set; }
 
         public int HealthPoints { get; set; }
         public int ManaPoints { get; set; }
@@ -44,6 +41,8 @@ namespace FirstRPGGame.CharacterFiles
         
         public int Toughness { get; set; }
         public int Damage { get; set; }
+
+        public Guid Id { get; set; }
 
         /* 
         -----------------------------------------------------------------------------------------
@@ -115,7 +114,16 @@ namespace FirstRPGGame.CharacterFiles
             Intelligence += CharacterClass.Intelligence;
             Vitality += CharacterClass.Vitality;
 
-            Image = CharacterClass.Image;
+            ImagePath = CharacterClass.ImagePath;
+        }
+
+        public void MakeCharacter()
+        {
+            CharacterClass = null;
+            Inventory = new List<Item>();
+            Equipment = new Equipment();
+            Skills = new List<Skill>();
+            Id = Guid.NewGuid();
         }
 
         public void UpdateStats()
@@ -170,9 +178,9 @@ namespace FirstRPGGame.CharacterFiles
 
         #region Character Item Properties
 
-        public List<Item> Inventory { get ; private set; }
+        public List<Item> Inventory { get ; set; }
 
-        public Equipment Equipment { get; private set; }
+        public Equipment Equipment { get; set; }
 
         #endregion
 

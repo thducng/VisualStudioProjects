@@ -1,10 +1,17 @@
 ﻿using FirstRPGGame.CharacterFiles.Classes;
+using System;
 
 namespace FirstRPGGame.CharacterFiles.Skills
 {
+    [Serializable]
     public class Skill
     {
-        public Skill(Class @class, int @skillLevelReq, int @skillLevel, string @skillName, string @skillDescription,
+        public Skill()
+        {
+            
+        }
+
+        public void MakeSkill(Class @class, int @skillLevelReq, int @skillLevel, string @skillName, string @skillDescription,
             int @baseDamageValue, int @baseDamageScale, bool @passive = false)
         {
             Class = @class;

@@ -3,14 +3,21 @@ using System.Collections.Generic;
 using System.Windows.Media.Imaging;
 using FirstRPGGame.CharacterFiles.Skills;
 using System.IO;
+using System.Xml.Serialization;
 
 namespace FirstRPGGame.CharacterFiles.Classes
 {
+    [Serializable]
     public class Archer : Class
     {
         public Archer()
         {
-            Image = new BitmapImage(new Uri(Path.GetFullPath("../../Resources/Images/Archer.jpg")));
+            
+        }
+
+        public void MakeClass()
+        {
+            ImagePath = Path.GetFullPath("../../Resources/Images/Archer.jpg");
 
             Strength = 6;
             Dexterity = 12;
@@ -31,15 +38,19 @@ namespace FirstRPGGame.CharacterFiles.Classes
         private void MakeSkill()
         {
             Skills = new List<Skill>();
-            Skills.AddRange
-                (new List<Skill>()
-                {
-                    new Skill(this, 2, 1, "Fire Shot", "Coveres the arrowtip in oil and fire", 250, 150),
-                    new Skill(this, 2, 1, "Ice Shot", "Coveres the arrowtip in ice", 200, 250),
-                    new Skill(this, 5, 1, "Double Shot", "Shoots two powerful arrows", 200, 300),
-                    new Skill(this, 10, 1, "Haki Arrow", "Coveres the whole arrow in Armament Haki", 500, 250),
+            Skill newSkill = new Skill();
 
-                });
+            newSkill.MakeSkill(this, 2, 1, "Fire Shot", "Coveres the arrowtip in oil and fire", 250, 150);
+            Skills.Add(newSkill);
+
+            newSkill.MakeSkill(this, 2, 1, "Ice Shot", "Coveres the arrowtip in ice", 200, 250);
+            Skills.Add(newSkill);
+
+            newSkill.MakeSkill(this, 5, 1, "Double Shot", "Shoots two powerful arrows", 200, 300);
+            Skills.Add(newSkill);
+
+            newSkill.MakeSkill(this, 10, 1, "Haki Arrow", "Coveres the whole arrow in Armament Haki", 500, 250);
+            Skills.Add(newSkill);
         }
     }
 }

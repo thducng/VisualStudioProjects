@@ -8,7 +8,7 @@ namespace FirstRPGGame.Items.Wearables
 {
     public class WearableLeftHandWeapon : WearableItem
     {
-        public WearableLeftHandWeapon(string @name, int @rarity, string @weaponType)
+        public void MakeItem(string @name, int @rarity, string @weaponType)
         {
             Name = @name;
             Rarity = @rarity;

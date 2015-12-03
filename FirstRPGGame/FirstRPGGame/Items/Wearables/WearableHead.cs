@@ -2,7 +2,7 @@
 {
     public class WearableHead : WearableItem
     {
-        public WearableHead(string @name, int @rarity, string @material)
+        public void MakeItem(string @name, int @rarity, string @material)
         {
             Name = @name;
             Rarity = @rarity;

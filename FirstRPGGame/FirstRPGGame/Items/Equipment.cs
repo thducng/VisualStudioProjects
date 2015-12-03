@@ -20,25 +20,25 @@ namespace FirstRPGGame.Items
             LeftHandWeapon = null;
         }
 
-        public WearableHead Head { get; private set; }
+        public WearableHead Head { get; set; }
 
-        public WearableShoulders Shoulders { get; private set; }
+        public WearableShoulders Shoulders { get; set; }
 
-        public WearableChest Chest { get; private set; }
+        public WearableChest Chest { get; set; }
 
-        public WearableLegs Legs { get; private set; }
+        public WearableLegs Legs { get; set; }
 
-        public WearableHands Hands { get; private set; }
+        public WearableHands Hands { get; set; }
 
-        public WearableFeet Feet { get; private set; }
+        public WearableFeet Feet { get; set; }
 
-        public WearableRing Ring { get; private set; }
+        public WearableRing Ring { get; set; }
 
-        public WearableNecklace Necklace { get; private set; }
+        public WearableNecklace Necklace { get; set; }
 
-        public WearableItem RightHandWeapon { get; private set; }
+        public WearableItem RightHandWeapon { get; set; }
 
-        public WearableItem LeftHandWeapon { get; private set; }
+        public WearableItem LeftHandWeapon { get; set; }
 
 
         public List<Item> Wear(WearableItem item, List<Item> inventory)

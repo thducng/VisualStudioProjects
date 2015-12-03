@@ -5,7 +5,7 @@ namespace FirstRPGGame.DataHandling
 {
     public class DataHandler
     {
-        private XmlTranslator<Character> xmlCharacterTranslator = new XmlTranslator<Character>(); 
+        private readonly XmlTranslator<Character> xmlCharacterTranslator = new XmlTranslator<Character>(); 
 
         public List<Character> GetCharacters()
         {

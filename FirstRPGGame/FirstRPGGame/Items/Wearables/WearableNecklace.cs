@@ -8,11 +8,10 @@ namespace FirstRPGGame.Items.Wearables
 {
     public class WearableNecklace : WearableItem
     {
-        public WearableNecklace(string @name, int @rarity)
+        public void MakeItem(string @name, int @rarity)
         {
             Name = @name;
             Rarity = @rarity;
-            WearableMaterial = null;
         }
     }
 }
