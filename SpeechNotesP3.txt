@@ -1,0 +1,90 @@
+Introuction
+- Name
+- A bit about the feature drag and drop shell integration
+- Demonstration of handed in Student Client
+- Demonstration of redesigned Student Client
+- Summary with pictures comparisons
+
+Drag and Drop Shell Integration
+- Is an image that follows the mouse when the left mouse button is pressed,
+  the image then disappeares when the the button is released
+- Helps the user identify which image that is bein held onto
+- Makes sure that the drag and drop is being used, might had been confusing
+  whether the image was been picked up or not.
+
+- Left picture shows an example of holding an notepad file, the start of drag
+  and drop, can be used and demonstrated by moving a file from a folder to another
+- Right picture shows a photoshopped demonstration of how the shell integration
+  might had been if it was succesfully implementet, the gun is being held onto
+
+- Its nessesarity was clear after the usibility test, but the remaining time
+  to create the redesign wasnt enough, so the priority was placed on the other
+  findings.
+
+Student Client Demonstration
+- Before demonstrating the student client, i would like to highlight these five
+  things to be changed in the redesign
+	- Sizes of Columns and Images
+	- The text box to the right that will be removed
+	- The buttons placement and names
+	- The background colour
+
+- When showing the client
+	- Show
+		- Demonstrate the drag and drop
+		- This textbox will be removed
+		- The buttons that will be changed
+		- the size of the columns and images
+		- There is five total scroll bars, the last three will be removed
+
+Redesigned Student Client
+- Before demonstrating the redesign, i would like to mention these additions to
+  the student client
+	- Whenever the user fails to login, the textbox will mention it, but if
+	  the user fails multiple times, the textbox will still mention it, but
+	  the text is the same, it wouldnt mention how many times it had tried
+	  so the user might be confused whether the system even tried to 
+	  authenticate, what has been done, is that the name will be erased when
+	  the login fails, so that the user can see, that the system tried but it
+	  fails.
+	- Another button has been added "How to play", this button will open up
+	  another window, that will explain how the interface works and how to
+	  operate the scroll bars, it will also explain how to complete the
+	  exercise.
+	- Another window has been added for the finish button, because if the
+	  user tries to finish before the exercise is completed, this window
+	  will pop up explaining why the exercise is not yet completed, and if
+	  the user wants to quit, the pop up will also advise on how to do that.
+	- The image of the professions had to be changed into the name of the 
+	  professions instead of an image, this was one of the wished from the
+	  stakeholders.
+	- Shortly the layout in general has been changes, the fonts the placement
+	  of buttons and the sizes of columns.
+
+- When showing client
+	- Show
+		- Demonstrate drag and drop, one on each row on each column
+		- Demonstrate the scroll bar
+		- Demonstrate the How to play button
+		- Demonstrate the finish button
+		- Then close the exercise.
+
+Summary
+- 1. slide
+	- In the before redesign, the sizes of the columns is widther than the
+	  after, to make space for a scroll bar, that will appear when the number
+	  of rows exceeds four.
+	- Everything on the right of the before, has been removed in the after
+- 2. slide
+	- When there is more than four rows, the scroll bar will appear, here is
+	  the difference, on the after the three last scroll bars has been
+	  removed, and is now scrollable by using one scroll bar, the profession
+	  column width has been slighty increased to fit a scrollbar, and will
+	  reduce itself when the scroll bar disappears.
+- 3. slide
+	- The two new windows is the result of removing the text box, one for
+	  explaining how the exercise works, another for explaining why the user
+	  couldnt finish the exercise. The textbox before did what both of these
+	  windows does now.
+
+	- And thats all for the student client and its redesign.
